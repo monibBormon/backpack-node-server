@@ -22,17 +22,17 @@ wss.on("connection", (ws, req) => {
 
   switch (type) {
     case "all":
-      url = "wss://stream.binance.com:9443/ws/!ticker@arr";
+      url = "wss://stream.binance.us:9443/ws/!ticker@arr";
       break;
     case "ticker":
-      url = `wss://stream.binance.com:9443/ws/${coin}usdt@ticker`;
+      url = `wss://stream.binance.us:9443/ws/${coin}usdt@ticker`;
       break;
     case "multi":
       url =
-        "wss://stream.binance.com:9443/stream?streams=btcusdt@trade/ethusdt@trade";
+        "wss://stream.binance.us:9443/stream?streams=btcusdt@trade/ethusdt@trade";
       break;
     case "depth":
-      url = `wss://stream.binance.com:9443/ws/${coin}usdt@depth20@100ms`;
+      url = `wss://stream.binance.us:9443/ws/${coin}usdt@depth20@100ms`;
       break;
     default:
       ws.send(JSON.stringify({ error: "Invalid stream type" }));
